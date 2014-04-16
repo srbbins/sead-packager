@@ -1,0 +1,6 @@
+0000000000000000000  data/Daily Regional Weather Forecasts in Support of Vortex2.mp4
+0000000000000000000  data/Vortex2_Mining2.xlsx
+0000000000000000000  data/Vortex2_Visualization.xml
+0000000000000000000  data/Vortex_Mining.xlsx
+0000000000000000000  data/IEEE Cluster 2013 Visualization Showcase-Vortex2 Visualization.pptx
+0000000000000000000  0489a707-d428-4db4-8ce0-1ace548bc653_oaiore.xml

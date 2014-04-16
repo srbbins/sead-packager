@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="ODUphyto.7.4" scope="system" system="knb" xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd"> <access authSystem="knb" order="allowFirst" scope="document"> <allow> <principal>public</principal>
+ <permission>read</permission>
+ </allow>
+ </access>
+ <dataset scope="document"> <title>Phytoplankton Data from the Eastern Continental Shelf Waters of the United States, Cape Hatteras to Gulf of Maine, 1979-1985</title>
+ <creator id="1378305810384" scope="document"> <individualName> <salutation>Dr.</salutation>
+ <givenName>Harold G.</givenName>
+ <surName>Marshall</surName>
+ </individualName>
+ <organizationName>Department of Biological Sciences, Old Dominion University</organizationName>
+ <address scope="document"> <city>Norfolk</city>
+ <administrativeArea>Virginia</administrativeArea>
+ <postalCode>23529-0266</postalCode>
+ <country>USA</country>
+ </address>
+ <phone phonetype="voice">757-683-3595</phone>
+ <phone phonetype="fax">757-683-5283</phone>
+ <electronicMailAddress>hmarshal@odu.edu</electronicMailAddress>
+ <onlineUrl>http://sci.odu.edu/biology/directory/marshall.shtml</onlineUrl>
+ </creator>
+ <creator id="1378305930330" scope="document"> <individualName> <salutation>Dr.</salutation>
+ <givenName>Todd A.</givenName>
+ <surName>Egerton</surName>
+ </individualName>
+ <organizationName>Department of Biological Sciences, Old Dominion University</organizationName>
+ <address scope="document"> <city>Norfolk</city>
+ <administrativeArea>Virginia</administrativeArea>
+ <postalCode>23529-0266</postalCode>
+ <country>USA</country>
+ </address>
+ <phone phonetype="voice">757-683-3595</phone>
+ <phone phonetype="fax">757-683-5283</phone>
+ <electronicMailAddress>tegerton@odu.edu</electronicMailAddress>
+ </creator>
+ <abstract> <para>This data set contains seasonal records of phytoplankton composition and abundance, from the eastern continental shelf waters of the United States (Cape Hatteras, N.C to Gulf of Maine).  Predominantly surface (1-4m) water samples were taken (e.g. 828 total) along transects from near shore to the outer shelf during 32 cruises for phytoplankton analysis, along with accompanying station co-ordinates, salinity and temperature data.  The time period represents ca. a two decade historical data set applicable to future comparative studies regarding climatic or other environmental changes associated with the phytoplankton presence in this oceanic region.  
+
+All water samples collected were analyzed at the Phytoplankton Analysis Laboratory at Old Dominion University, Norfolk, Virginia. The majority of the sampling came from vessels of the NOAA National Marine Fisheries Service programs that included Ocean Pulse and MARMAP.  
+Accompanying publications presenting mean concentrations and volumes for species and algal categories across regions of the shelf, and specific distribution information are in the following references. These studies represent the most extensive and concentrated coverage of phytoplankton composition completed to date for this region.</para>
+ </abstract>
+ <keywordSet> <keyword>phytoplankton</keyword>
+ <keyword>Atlantic Ocean</keyword>
+ <keyword>continental shelf</keyword>
+ <keyword>diatoms</keyword>
+ <keyword>NOAA</keyword>
+ </keywordSet>
+<intellectualRights><para>No restrictions on data usage</para>
+</intellectualRights>
+  <coverage scope="document"> <geographicCoverage scope="document"> <geographicDescription>Atlantic Ocean, eastern continental shelf from Cape Hatteras, NC to Gulf of Maine</geographicDescription>
+ <boundingCoordinates> <westBoundingCoordinate>-76.625</westBoundingCoordinate>
+ <eastBoundingCoordinate>-56.375</eastBoundingCoordinate>
+ <northBoundingCoordinate>47.875</northBoundingCoordinate>
+ <southBoundingCoordinate>34.875</southBoundingCoordinate>
+ </boundingCoordinates>
+ </geographicCoverage>
+ <temporalCoverage scope="document"> <rangeOfDates> <beginDate> <calendarDate>1979-05-03</calendarDate>
+ </beginDate>
+ <endDate> <calendarDate>1985-08-14</calendarDate>
+ </endDate>
+ </rangeOfDates>
+ </temporalCoverage>
+ </coverage>
+ <contact id="1378306074535" scope="document"> <individualName> <salutation>Dr.</salutation>
+ <givenName>Todd A.</givenName>
+ <surName>Egerton</surName>
+ </individualName>
+ <organizationName>Department of Biological Sciences, Old Dominion University</organizationName>
+ <address scope="document"> <city>Norfolk</city>
+ <administrativeArea>Virginia</administrativeArea>
+ <postalCode>23529-0266</postalCode>
+ <country>USA</country>
+ </address>
+ <phone phonetype="voice">757-683-3595</phone>
+ <phone phonetype="fax">757-683-5283</phone>
+ <electronicMailAddress>tegerton@odu.edu</electronicMailAddress>
+ </contact>
+ <methods> <methodStep> <description> <section> <title>Collection</title>
+ <para>At each station standard hydrocasts were made with a 500 ml sample removed for microscopic phytoplankton analysis.</para>
+ </section>
+ </description>
+ </methodStep>
+ <methodStep> <description> <section> <title>Preservation</title>
+ <para>These samples were preserved immediately with buffered formalin and stored in polyethylene bottles prior to laboratory analysis.</para>
+ </section>
+ </description>
+ </methodStep>
+ <methodStep> <description> <section> <title>Analysis</title>
+ <para>A modified Utermöhl method was used with an inverted plankton microscope at magnifications of 300X and 500X (Marshall 1984b).</para>
+ </section>
+ </description>
+ </methodStep>
+ <sampling> <studyExtent> <description> <para>This data set contains seasonal records of phytoplankton composition and abundance, from the eastern continental shelf waters of the United States (Cape Hatteras, N.C to Gulf of Maine).  The time period represents ca. a two decade historical data set applicable to future comparative studies regarding climatic or other environmental changes associated with the phytoplankton presence in this oceanic region. All four seasons were represented in these collections.</para>
+ </description>
+ </studyExtent>
+ <samplingDescription> <para>Predominantly surface (1-4m) water samples were taken (e.g. 828 total) along transects from near shore to the outer shelf during 32 cruises for phytoplankton analysis, along with accompanying station co-ordinates, salinity and temperature data.</para>
+ </samplingDescription>
+ </sampling>
+ </methods>
+ <dataTable id="1383769996604" scope="document"> <entityName>ContinentalShelfPhytoplankton.txt</entityName>
+ <entityDescription>Phytoplankton data from the Eastern Continental Shelf 1979-1985</entityDescription>
+ <physical id="1383768688693" scope="document"> <objectName>ContinentalShelfPhytoplankton.txt</objectName>
+ <size unit="byte">2915861</size>
+ <dataFormat> <textFormat> <numHeaderLines>1</numHeaderLines>
+ <recordDelimiter>#x0A</recordDelimiter>
+ <attributeOrientation>column</attributeOrientation>
+ <simpleDelimited> <fieldDelimiter>,</fieldDelimiter>
+ </simpleDelimited>
+ </textFormat>
+ </dataFormat>
+ <distribution> <online> <url>ecogrid://knb/ODUphyto.5.1</url>
+ </online>
+ </distribution>
+ </physical>
+ <attributeList> <attribute id="1383769996605" scope="document"> <attributeName>Cruise</attributeName>
+ <attributeDefinition>Collection cruise number</attributeDefinition>
+ <measurementScale> <nominal> <nonNumericDomain> <textDomain> <definition>Arbitrary cruise ID numbers</definition>
+ </textDomain>
+ </nonNumericDomain>
+ </nominal>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996606" scope="document"> <attributeName>Code</attributeName>
+ <attributeDefinition>Phytoplankton collection station number</attributeDefinition>
+ <measurementScale> <nominal> <nonNumericDomain> <textDomain> <definition>Arbitrary station ID numbers</definition>
+ </textDomain>
+ </nonNumericDomain>
+ </nominal>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996607" scope="document"> <attributeName>Date</attributeName>
+ <attributeDefinition>Date of sample collection</attributeDefinition>
+ <measurementScale> <dateTime> <formatString>M-D-YYYY</formatString>
+ <dateTimePrecision>0</dateTimePrecision>
+ </dateTime>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996608" scope="document"> <attributeName>SpecNum</attributeName>
+ <attributeDefinition>Taxonomic code assigned to unique phytoplankton taxa</attributeDefinition>
+ <measurementScale> <nominal> <nonNumericDomain> <textDomain> <definition>unique ID code for each phytoplankton taxa</definition>
+ </textDomain>
+ </nonNumericDomain>
+ </nominal>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996609" scope="document"> <attributeName>Species</attributeName>
+ <attributeDefinition>Phytoplankton species latin name (genus species)</attributeDefinition>
+ <measurementScale> <nominal> <nonNumericDomain> <textDomain> <definition>Genus species</definition>
+ </textDomain>
+ </nonNumericDomain>
+ </nominal>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996610" scope="document"> <attributeName>Density (cells/L)</attributeName>
+ <attributeDefinition>Number of phytoplankton cells per liter</attributeDefinition>
+ <measurementScale> <ratio> <unit> <customUnit>cellsPerLiter</customUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </ratio>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996611" scope="document"> <attributeName>Latitude</attributeName>
+ <attributeDefinition>Latitude of sample collection in decimal degrees</attributeDefinition>
+ <measurementScale> <interval> <unit> <customUnit>degree</customUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </interval>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996612" scope="document"> <attributeName>Longitude</attributeName>
+ <attributeDefinition>Longitude of sample collection in decimal degrees</attributeDefinition>
+ <measurementScale> <interval> <unit> <customUnit>degree</customUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </interval>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996613" scope="document"> <attributeName>Depth(m)</attributeName>
+ <attributeDefinition>Depth of sample collection in meters</attributeDefinition>
+ <measurementScale> <ratio> <unit> <standardUnit>meter</standardUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </ratio>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996614" scope="document"> <attributeName>Temp(C)</attributeName>
+ <attributeDefinition>Water temperature at collection site in Celsius</attributeDefinition>
+ <measurementScale> <interval> <unit> <standardUnit>celsius</standardUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </interval>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996615" scope="document"> <attributeName>Salinity(ppt)</attributeName>
+ <attributeDefinition>Water salinity at collection site in parts per thousand</attributeDefinition>
+ <measurementScale> <interval> <unit> <customUnit>parts per thousand</customUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </interval>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996616" scope="document"> <attributeName>Phylum</attributeName>
+ <attributeDefinition>Phytoplankton taxonomic grouping.  Groups used in this study are: Bacilliophyceans, Chlorophyceans, Chrysophyceans, Coccolithophores, Cryptophyceans, Cyanophyceans, Dinoflagellates, Euglenophyceans, Prasiniophyceans, Silicophyceans, Xanthophyceans, Others</attributeDefinition>
+ <measurementScale> <nominal> <nonNumericDomain> <textDomain> <definition>phytoplankton group</definition>
+ </textDomain>
+ </nonNumericDomain>
+ </nominal>
+ </measurementScale>
+ </attribute>
+ <attribute id="1383769996617" scope="document"> <attributeName>Total Density (cells/L)</attributeName>
+ <attributeDefinition>Total number of phytoplankton cells per collection in cells per liter</attributeDefinition>
+ <measurementScale> <ratio> <unit> <customUnit>cellsPerLiter</customUnit>
+ </unit>
+ <numericDomain> <numberType>natural</numberType>
+ </numericDomain>
+ </ratio>
+ </measurementScale>
+ </attribute>
+ </attributeList>
+ <numberOfRecords>29618</numberOfRecords>
+ </dataTable>
+ </dataset>
+ <additionalMetadata> <metadata> <unitList> <unit id="cellsPerLiter" name="cellsPerLiter" parentSI="numberPerMeterCubed" unitType="volumetricDensity"> <description>number of individual phytoplankton cells per liter</description>
+ </unit>
+ </unitList>
+ </metadata>
+ </additionalMetadata>
+ <additionalMetadata> <metadata> <unitList> <unit id="degree" name="degree" parentSI="meter" unitType="length"> <description>degree</description>
+ </unit>
+ </unitList>
+ </metadata>
+ </additionalMetadata>
+ <additionalMetadata> <metadata> <unitList> <unit id="totalcellsPerLiter" name="totalcellsPerLiter" parentSI="numberPerMeterCubed" unitType="volumetricDensity"> <description>total phytoplankton density (cells per Liter) for particular collection</description>
+ </unit>
+ </unitList>
+ </metadata>
+ </additionalMetadata>
+ <additionalMetadata> <metadata> <unitList> <unit id="parts per thousand" name="parts per thousand" parentSI="molesPerCubicMeter" unitType="amountOfSubstanceConcentration"> <description>parts per thousand</description>
+ </unit>
+ </unitList>
+ </metadata>
+ </additionalMetadata>
+ </eml:eml>
