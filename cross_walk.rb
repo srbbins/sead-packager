@@ -1,3 +1,19 @@
+require './dcxml'
+
+#add node methods
+module Nokogiri
+  module XML
+    class Node
+      def is_nonempty_text_node?
+        return self.class.name == "Nokogiri::XML::Text" && self.content.strip != ""
+      end
+      def is_foaf_name_node?
+        return !self.namespace.nil? && self.namespace.prefix == "foaf" && self.name == "name"
+      end
+    end
+  end
+end
+
 class CrossWalk
   attr_accessor :ore, :dc
 
@@ -7,13 +23,8 @@ class CrossWalk
     @ore = OreXml.new(f)
   end
 
-
   def transform
     desired_fields = YAML.load_file('config/fields.yml')
-
-    puts dc.dc_root
-
-
     desired_fields['fields'].each do |field|
 
       field[1].each do |qualifier|
