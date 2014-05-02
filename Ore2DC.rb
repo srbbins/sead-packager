@@ -2,12 +2,26 @@
 
 require 'rubygems'
 require 'bundler/setup'
-
+require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'pathname'
+require_relative 'dc_node'
 require_relative 'orexml'
 require_relative 'dcxml'
+
+module Nokogiri
+  module XML
+    class Node
+      def is_nonempty_text_node?
+        return self.class.name == "Nokogiri::XML::Text" && self.content.strip != ""
+      end
+      def is_foaf_name_node?
+        return !self.namespace.nil? && self.namespace.prefix == "foaf" && self.name == "name"
+      end
+    end
+  end
+end
 
 f = File.new ARGV[0]
 if ARGV.length == 2
@@ -22,39 +36,33 @@ ore = OreXml.new(f)
 
 dc = DCXml.new
 
-
+desired_fields = YAML.load_file('config/fields.yml')
 
 puts dc.dc_root
 
-class DCNode
-  attr_accessor :element, :qualifier, :document, :node
 
-  def initialize(document, element, qualifier)
-    @document, @element, @qualifier = document, element, qualifier
-    out_node = Nokogiri::XML::Node.new('dcvalue', document)
-    out_node['element']= element
-    @element = out_node['element']
-    out_node['qualifier']= qualifier
-    @qualifier = out_node['qualifier']
-    @node = out_node
-  end
+desired_fields['fields'].each do |field|
 
-  def content=(content_string)
-    @node.content = content_string
-  end
-
-  def content
-    @node.content
+  field[1].each do |qualifier|
+    ore.document.xpath("//dcterms:#{field[0]}").each() do |node|
+      node.children.each do |child_node|
+        name = nil
+        if child_node.is_foaf_name_node?
+          name = node.xpath("foaf:name")[0].content
+        elsif child_node.is_nonempty_text_node?
+          name = child_node.content
+        end
+        if !name.nil?
+          out_node = DCNode.new(dc.document, field[0], qualifier)
+          out_node.content = name
+          dc.dc_root << out_node.node
+        end
+      end
+    end
   end
 end
 
-ore.document.xpath("//dcterms:creator").each() do |node|
-  puts node.content.to_s
-  out_node = DCNode.new(dc.document, 'creator', 'none')
-  name = node.xpath("foaf:name")[0].content
-  out_node.content = name
-  dc.dc_root << out_node.node
-end
+
 
 puts dc.document.to_s
 

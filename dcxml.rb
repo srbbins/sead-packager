@@ -1,7 +1,6 @@
 require 'fileutils'
 require 'nokogiri'
 
-
 class DCXml
   attr_accessor :document, :dc_root
 

@@ -1,0 +1,23 @@
+fields:
+   date:
+    - available
+#   identifier:
+#    - uri
+   subject:
+    - none
+   title:
+    - none
+   type:
+    - none
+   creator:
+    - none
+   contributor:
+    - none
+
+
+
+
+
+
+
+
