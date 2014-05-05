@@ -9,5 +9,4 @@ class OreXml
     @document = Nokogiri::XML(f)
   end
 
-
 end
