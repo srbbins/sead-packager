@@ -14,7 +14,7 @@ require 'rspec'
 
 describe CrossWalk do
   it "takes the sead ore and produce a dspace metadata file" do
-    f = File.new '/home/srobbins/Projects/sead-packager/spec/fixtures/testore.xml'
+    f = File.new 'spec/fixtures/testore.xml'
     crosswalk = CrossWalk.new(f)
     crosswalk.transform
     crosswalk.dc.dc_root.xpath('//dcvalue[@element="creator"]').first.content.should == 'Quan Zhou'
@@ -36,3 +36,18 @@ describe 'sead_bag' do
     bag.ore_file.document.xpath('//dcterms:creator/foaf:name').first.content.should=="Quan Zhou"
   end
 end
+
+describe 'DSpacePackage' do
+  it 'should contain the file for one of the bag\'s aggregated items' do
+    #before we do this we need an aggregated items class
+      true.should == false
+  end
+end
+
+describe OreXml do
+  it 'should contain a top level aggregation id' do
+    test_ore = OreXml.new(File.new 'spec/fixtures/testore.xml')
+    test_ore.aggregation_id.should == "http://sead-test/fakeUri/0489a707-d428-4db4-8ce0-1ace548bc653_Aggregation"
+  end
+end
+

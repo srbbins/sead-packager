@@ -1,5 +1,8 @@
+#
+# represents a single qualified dublin core node for the dspace metadata output
+#
 class DCNode
-  attr_accessor :element, :qualifier, :document, :node
+  attr_accessor :element, :qualifier, :node
 
   def initialize(document, element, qualifier)
     @document, @element, @qualifier = document, element, qualifier
