@@ -12,9 +12,10 @@ require 'dcxml'
 require 'rspec'
 
 describe CrossWalk do
-  it "takes the sead ore and produce a dspace metadata file"
-  f = File.new '/home/srobbins/Projects/sead-packager/spec/fixtures/testore.xml'
-  crosswalk = CrossWalk.new(f)
-  crosswalk.transform
-  expect(crosswalk.dc.dc_root.xpath('//dcvalue[@element="creator"]').first.content).to eq('Quan Zhou')
+  it "takes the sead ore and produce a dspace metadata file" do
+    f = File.new '/home/srobbins/Projects/sead-packager/spec/fixtures/testore.xml'
+    crosswalk = CrossWalk.new(f)
+    crosswalk.transform
+    crosswalk.dc.dc_root.xpath('//dcvalue[@element="creator"]').first.content.should == 'Quan Zhou'
+  end
 end

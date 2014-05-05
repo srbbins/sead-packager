@@ -1,0 +1,2 @@
+class SeadBag
+end
