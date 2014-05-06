@@ -1,4 +1,4 @@
-require './dcxml'
+require './d_space_metadata'
 
 #add node methods
 module Nokogiri
@@ -14,13 +14,14 @@ module Nokogiri
   end
 end
 
-class CrossWalk
-  attr_accessor :ore, :dc
+class DSpaceCrossWalk
+  attr_accessor :dc, :ore
 
 
-  def initialize(f)
-    @dc = DCXml.new
-    @ore = OreXml.new(f)
+  def initialize(ore_document, id)
+    @ore = ore_document
+    @dc = DSpaceXml.new
+    transform
   end
 
   def transform

@@ -6,10 +6,10 @@ require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'pathname'
-require 'cross_walk'
+require 'd_space_cross_walk'
 require 'dc_node'
 require 'orexml'
-require 'dcxml'
+require 'd_space_metadata'
 
 
 
@@ -21,7 +21,7 @@ else
 end
 
 
-crosswalk = CrossWalk.new(f)
+crosswalk = DSpaceCrossWalk.new(f)
 crosswalk.transform
 
 

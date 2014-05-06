@@ -1,7 +1,7 @@
 require 'fileutils'
 require 'nokogiri'
 
-class DCXml
+class DSpaceXml
   attr_accessor :document, :dc_root
 
   def initialize()

@@ -5,17 +5,21 @@ require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'pathname'
-require 'cross_walk'
+require 'd_space_cross_walk'
 require 'dc_node'
 require 'orexml'
-require 'dcxml'
+require 'd_space_metadata'
+require 'd_space_package'
+require 'out_package_factory'
+require 'dspace_package_factory'
 require 'sead_bag'
 require 'rspec'
 
-describe CrossWalk do
+#this might be going away
+describe DSpaceCrossWalk do
   it "takes the sead ore and produce a dspace metadata file" do
-    f = File.new 'spec/fixtures/testore.xml'
-    crosswalk = CrossWalk.new(f)
+    bag = SeadBag.new("test-items")
+    crosswalk = DSpaceCrossWalk.new(bag.ore_file, bag.ore_file.aggregated_resources[0])
     crosswalk.transform
     crosswalk.dc.dc_root.xpath('//dcvalue[@element="creator"]').first.content.should == 'Quan Zhou'
   end
@@ -37,10 +41,16 @@ describe 'sead_bag' do
   end
 end
 
-describe 'DSpacePackage' do
-  it 'should contain the file for one of the bag\'s aggregated items' do
-    #before we do this we need an aggregated items class
-      true.should == false
+describe DspacePackageFactory do
+  before(:all) do
+    @factory = OutPackageFactory.new('Dspace')
+    @bag = SeadBag.new("test-items")
+  end
+  it 'should get the filenames for one of the bag\'s aggregated items' do
+    packager = @factory.new_packager(@bag.ore_file)
+    filenames = packager.get_filenames("http://sead-test/fakeUri/cce29a32-1cbb-4859-bf03-15ecc8db97bc")
+    puts filenames.to_s
+    filenames[0].should == "data/Vortex_Mining.xlsx"
   end
 end
 
@@ -48,6 +58,10 @@ describe OreXml do
   it 'should contain a top level aggregation id' do
     test_ore = OreXml.new(File.new 'spec/fixtures/testore.xml')
     test_ore.aggregation_id.should == "http://sead-test/fakeUri/0489a707-d428-4db4-8ce0-1ace548bc653_Aggregation"
+  end
+  it 'should have a list of aggregated resource ids' do
+    test_ore = OreXml.new(File.new 'spec/fixtures/testore.xml')
+    test_ore.aggregated_resources[0].should == "http://sead-test/fakeUri/cce29a32-1cbb-4859-bf03-15ecc8db97bc"
   end
 end
 
