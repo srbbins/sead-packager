@@ -1,3 +1,4 @@
+require 'd_space_cross_walk'
 class DspacePackageFactory
   def initialize(ore)
     @ore = ore
@@ -5,12 +6,13 @@ class DspacePackageFactory
   # needs to get filenames from each agregated id and generate metadata
   def generate
     package_array = []
-    ore.aggregated_ids.each do |id|
-      crosswalk = DSpaceCrosswalk.new(ore, id)
+    @ore.aggregated_resources.each do |id|
+      crosswalk = DSpaceCrossWalk.new(@ore, id)
       metadata = crosswalk.dc
       filenames = get_filenames(id)
       package_array << DSpacePackage.new(filenames, metadata)
     end
+    return package_array
   end
 
   def get_filenames(id)

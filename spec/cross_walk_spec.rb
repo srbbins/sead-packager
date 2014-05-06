@@ -25,7 +25,7 @@ describe DSpaceCrossWalk do
   end
 end
 
-describe 'sead_bag' do
+describe SeadBag do
 
   it 'should get a list of files from the data directory' do
     bag = SeadBag.new("test-items")
@@ -49,8 +49,46 @@ describe DspacePackageFactory do
   it 'should get the filenames for one of the bag\'s aggregated items' do
     packager = @factory.new_packager(@bag.ore_file)
     filenames = packager.get_filenames("http://sead-test/fakeUri/cce29a32-1cbb-4859-bf03-15ecc8db97bc")
-    puts filenames.to_s
     filenames[0].should == "data/Vortex_Mining.xlsx"
+  end
+end
+
+describe DSpacePackage do
+  before(:all) do
+    @tmpdir = 'sead_packager_test_tmp'
+    @factory = OutPackageFactory.new('Dspace')
+    @bag = SeadBag.new("test-items")
+    @bag_dir = @bag.bag_dir
+    @packager = @factory.new_packager(@bag.ore_file)
+    package_array=@packager.generate
+    @package = package_array[0]
+    setup_tmp_dir
+  end
+
+
+  def setup_tmp_dir
+    FileUtils.mkdir(@tmpdir)
+  end
+
+
+  def remove_tmp_dir
+    FileUtils.rm_r(@tmpdir)
+    FileUtils.rmdir(@tmpdir)
+  end
+  it 'should contain the filenames for all of the bag\'s aggregated items' do
+    @package.content_filenames.should include('data/Vortex_Mining.xlsx')
+  end
+  it 'should build the package in the specified directory' do
+
+    @package.serialize(@tmpdir, @bag_dir)
+    Dir.entries(@tmpdir).should include("metadata.xml")
+    Dir.entries(@tmpdir).should include("Vortex_Mining.xlsx")
+  end
+  after(:all) do
+    entries = Dir.entries(Dir.getwd)
+    if entries.include? @tmpdir
+      remove_tmp_dir
+    end
   end
 end
 
@@ -64,4 +102,5 @@ describe OreXml do
     test_ore.aggregated_resources[0].should == "http://sead-test/fakeUri/cce29a32-1cbb-4859-bf03-15ecc8db97bc"
   end
 end
+
 
